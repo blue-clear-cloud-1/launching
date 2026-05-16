@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숨생: 2026 대학생 메타센싱 공간</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#f4f7f4',
+                            100: '#e7ede7',
+                            200: '#d1dbd1',
+                            600: '#7a968a',
+                            700: '#637a70',
+                        },
+                        slate: {
+                            50: '#f8fafc',
+                            900: '#0f172a',
+                        },
+                        beige: '#fcfaf7',
+                        lavender: '#e6e6fa'
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fcfaf7;
+            color: #334155;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #7a968a;
+            transition: width .3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="font-sans overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="font-display font-semibold text-2xl tracking-tight text-sage-700">숨생<span class="text-xs font-normal ml-1 opacity-60">2026 Meta-Sensing</span></div>
+            <div class="hidden md:flex space-x-10 text-sm font-medium text-slate-600">
+                <a href="#hero" class="nav-link">오늘의 감각</a>
+                <a href="#trends" class="nav-link">메타센싱 트렌드</a>
+                <a href="#questions" class="nav-link">나를 위한 체크</a>
+                <a href="#cta" class="nav-link">다정한 연결</a>
+            </div>
+            <a href="https://forms.gle/wZugvNEACdovWMwo7" target="_blank">
+                <button class="bg-sage-600 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-sage-700 transition-all shadow-sm">
+                    감각 측정하기
+                </button>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-sage-100 rounded-full blur-[100px] opacity-50"></div>
+        <div class="absolute bottom-[5%] left-[-5%] w-[400px] h-[400px] bg-lavender rounded-full blur-[100px] opacity-40"></div>
+        
+        <div class="max-w-4xl w-full text-center z-10">
+            <div class="inline-block px-4 py-1.5 mb-6 bg-white/50 border border-sage-200 rounded-full text-sage-700 text-xs font-medium tracking-wider animate-fade-in-up">
+                SEOUL CAMPUS META-SENSING SPACE 2026
+            </div>
+            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-light text-slate-900 leading-tight mb-8 animate-fade-in-up" style="animation-delay: 0.2s">
+                뭉뚱그리지 않는,<br/>
+                <span class="font-medium">나의 섬세한 감정</span>을 감지하는 시간
+            </h1>
+            <p class="text-lg md:text-xl text-slate-500 font-light mb-12 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.4s">
+                내 마음의 상태를 객관적으로 인지하고 관리하는 메타센싱 시대.<br class="hidden md:block"/> 
+                서울 대학생들을 위한 다정하고 여유로운 안식 구역.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.6s">
+                <a href="#questions" class="w-full sm:w-auto px-8 py-4 bg-slate-900 text-white rounded-2xl font-medium hover:bg-slate-800 transition-all shadow-xl shadow-slate-200 text-center">
+                    지금 내 마음 인지하기
+                </a>
+                <a href="#trends" class="w-full sm:w-auto px-8 py-4 bg-white border border-slate-200 text-slate-600 rounded-2xl font-medium hover:border-sage-300 transition-all text-center">
+                    2026 트렌드 키워드
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-float text-slate-400">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+    </section>
+
+    <!-- Trend Insights Section -->
+    <section id="trends" class="py-32 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8 reveal">
+                <div class="max-w-2xl">
+                    <h2 class="font-display text-3xl md:text-4xl font-medium text-slate-900 mb-6">막연한 위로 대신 직관적인 인지로</h2>
+                    <p class="text-slate-500 leading-relaxed text-lg italic">
+                        "2026년의 캠퍼스는 단순히 '우울하다'가 아닌, 내 감정의 주파수를 정확히 찾아내고 관리하려는 '메타센싱(Meta-sensing)' 트렌드가 주도하고 있습니다."
+                    </p>
+                </div>
+                <div class="text-right hidden md:block">
+                    <span class="text-5xl font-display font-light text-sage-600 italic">2026</span>
+                    <p class="text-xs text-slate-400 uppercase tracking-widest mt-2">Trend Key: Meta-Sensing</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+                <!-- Trend Card 1: 감정 아카이빙 -->
+                <div class="p-8 rounded-3xl bg-sage-50 border border-sage-100 reveal" style="transition-delay: 0.1s">
+                    <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm text-sage-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-4 tracking-tight">감정 해상도 높이기</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">내 마음 상태를 뭉뚱그려 무시하지 않고, 세밀한 단어와 기록으로 쪼개어 인지(Sensing)하는 훈련입니다.</p>
+                </div>
+                <!-- Trend Card 2: 다정한 환대 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-sage-100 reveal" style="transition-delay: 0.2s">
+                    <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm text-slate-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-4 tracking-tight">다정함의 안전망</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">자극적인 소셜 미디어 피드에서 잠시 벗어나, 무조건적인 환대와 여유를 느낄 수 있는 느슨한 연대를 지향합니다.</p>
+                </div>
+                <!-- Trend Card 3: 제철 코어 -->
+                <div class="p-8 rounded-3xl bg-orange-50/30 border border-orange-100 reveal" style="transition-delay: 0.3s">
+                    <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm text-orange-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 11H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-4 tracking-tight">지금 이 순간, 제철 감각</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">바꿀 수 없는 미래의 불안 대신 '현재 서울의 계절', '오늘의 온도'처럼 직관적인 순간의 몰입에 집중합니다.</p>
+                </div>
+            </div>
+
+            <!-- Visual Data Visualization -->
+            <div class="bg-beige rounded-[40px] p-8 md:p-16 border border-slate-100 reveal">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h3 class="text-2xl font-medium text-slate-900 mb-8">감정을 객관적으로 감지할 때,<br/>마음의 회복이 시작됩니다.</h3>
+                        <div class="space-y-8">
+                            <div>
+                                <div class="flex justify-between text-sm mb-2 text-slate-600">
+                                    <span>자신의 주된 감정 상태 인지율</span>
+                                    <span>89%</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
+                                    <div class="h-full bg-sage-600 rounded-full w-[89%]"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-2 text-slate-600">
+                                    <span>메타센싱 루틴 구축 만족도</span>
+                                    <span>94%</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
+                                    <div class="h-full bg-sage-600 rounded-full w-[94%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="aspect-square bg-white rounded-full border border-slate-100 p-8 shadow-2xl shadow-sage-200/50 flex flex-col items-center justify-center text-center">
+                            <span class="text-xs font-display text-sage-600 mb-2 uppercase tracking-widest">Sensing Connected</span>
+                            <span class="text-5xl font-display font-medium text-slate-900" id="sensing-status">Safe</span>
+                            <div class="mt-6 flex space-x-2">
+                                <div class="w-2 h-2 rounded-full bg-sage-600 animate-pulse"></div>
+                                <div class="w-2 h-2 rounded-full bg-sage-300"></div>
+                                <div class="w-2 h-2 rounded-full bg-sage-100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reflective Inquiry Section -->
+    <section id="questions" class="py-32 px-6 bg-slate-50 relative overflow-hidden">
+        <!-- Floating shapes -->
+        <div class="absolute top-20 left-10 w-32 h-32 bg-sage-200/30 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-48 h-48 bg-lavender/30 rounded-full blur-3xl"></div>
+
+        <div class="max-w-3xl mx-auto text-center reveal">
+            <h2 class="font-display text-3xl md:text-4xl font-medium text-slate-900 mb-16">
+                하루 1분, 내 감정을 정교하게 짚어내는 질문
+            </h2>
+            
+            <div class="space-y-12">
+                <!-- Question 1 -->
+                <div class="group p-8 md:p-12 bg-white rounded-[32px] shadow-sm hover:shadow-xl transition-all border border-slate-100 text-left">
+                    <span class="inline-block text-xs font-display text-sage-600 mb-4 uppercase tracking-tighter">Question 01</span>
+                    <p class="text-xl md:text-2xl text-slate-800 font-light leading-snug">오늘 학업과 미래의 무게가 내 어깨를 누르는 수준은<br/><span class="text-sage-700 font-medium italic">10점 만점에 몇 점인가요?</span></p>
+                    <div class="mt-8 flex justify-between gap-2">
+                        <button class="flex-1 py-3 rounded-xl bg-slate-50 hover:bg-sage-100 text-slate-500 hover:text-sage-700 text-sm transition-all border border-transparent hover:border-sage-200" onclick="updateSensing('Light')">1~3점 (가벼움)</button>
+                        <button class="flex-1 py-3 rounded-xl bg-slate-50 hover:bg-sage-100 text-slate-500 hover:text-sage-700 text-sm transition-all border border-transparent hover:border-sage-200" onclick="updateSensing('Neutral')">4~7점 (보통)</button>
+                        <button class="flex-1 py-3 rounded-xl bg-slate-50 hover:bg-sage-100 text-slate-500 hover:text-sage-700 text-sm transition-all border border-transparent hover:border-sage-200" onclick="updateSensing('Heavy')">8~10점 (무거움)</button>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="group p-8 md:p-12 bg-white rounded-[32px] shadow-sm hover:shadow-xl transition-all border border-slate-100 text-left reveal" style="transition-delay: 0.2s">
+                    <span class="inline-block text-xs font-display text-sage-600 mb-4 uppercase tracking-tighter">Question 02</span>
+                    <p class="text-xl md:text-2xl text-slate-800 font-light leading-snug">오늘 타인에게 받은 사소한 배려나 <span class="text-sage-700 font-medium italic">다정함을 포착한 순간</span>이 있었나요?</p>
+                    <textarea class="mt-8 w-full p-6 rounded-2xl bg-slate-50 border-none focus:ring-1 focus:ring-sage-200 resize-none h-32 placeholder:text-slate-300 text-slate-600" placeholder="아주 미세한 순간이라도 좋습니다. 기억을 객관적으로 기록해 보세요."></textarea>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="group p-8 md:p-12 bg-white rounded-[32px] shadow-sm hover:shadow-xl transition-all border border-slate-100 text-left reveal" style="transition-delay: 0.4s">
+                    <span class="inline-block text-xs font-display text-sage-600 mb-4 uppercase tracking-tighter">Question 03</span>
+                    <p class="text-xl md:text-2xl text-slate-800 font-light leading-snug">지금 내 오감이 가장 먼저 반응하는 <span class="text-sage-700 font-medium italic">제철 위로의 매개체</span>는 무엇인가요?</p>
+                    <div class="mt-8 flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-sage-50 text-sage-700 rounded-full text-sm cursor-pointer border border-sage-100 hover:bg-sage-100 transition-colors" onclick="updateSensing('Warm')">☕ 따뜻한 라떼 한 잔</span>
+                        <span class="px-4 py-2 bg-sage-50 text-sage-700 rounded-full text-sm cursor-pointer border border-sage-100 hover:bg-sage-100 transition-colors" onclick="updateSensing('Fresh')">🍃 청량한 한강 바람</span>
+                        <span class="px-4 py-2 bg-sage-50 text-sage-700 rounded-full text-sm cursor-pointer border border-sage-100 hover:bg-sage-100 transition-colors" onclick="updateSensing('Calm')">🎧 나만 아는 플리</span>
+                        <span class="px-4 py-2 bg-sage-50 text-sage-700 rounded-full text-sm cursor-pointer border border-sage-100 hover:bg-sage-100 transition-colors" onclick="updateSensing('Relax')">🧘 30초의 멍때리기</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Low-Barrier Interaction Section -->
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="glass p-10 md:p-16 rounded-[48px] border-none shadow-2xl shadow-slate-100 reveal">
+                <div class="text-center mb-12">
+                    <h3 class="text-2xl font-medium text-slate-900 mb-4">현재 나의 감정 주파수를 세밀하게 조율하기</h3>
+                    <p class="text-slate-500">감정을 감지하고 이름을 붙이는 것만으로도 스트레스는 완화됩니다.</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <button class="w-24 h-24 rounded-full bg-sage-50 flex flex-col items-center justify-center hover:scale-110 transition-transform shadow-inner group" onclick="respondSensing('calm')">
+                        <span class="text-2xl mb-1 grayscale group-hover:grayscale-0 transition-all">✨</span>
+                        <span class="text-[10px] text-sage-600 font-medium">평온과 안 정</span>
+                    </button>
+                    <button class="w-24 h-24 rounded-full bg-orange-50 flex flex-col items-center justify-center hover:scale-110 transition-transform shadow-inner group" onclick="respondSensing('tired')">
+                        <span class="text-2xl mb-1 grayscale group-hover:grayscale-0 transition-all">☕</span>
+                        <span class="text-[10px] text-orange-600 font-medium">정서적 결핍</span>
+                    </button>
+                    <button class="w-24 h-24 rounded-full bg-slate-50 flex flex-col items-center justify-center hover:scale-110 transition-transform shadow-inner group" onclick="respondSensing('proud')">
+                        <span class="text-2xl mb-1 grayscale group-hover:grayscale-0 transition-all">🌱</span>
+                        <span class="text-[10px] text-slate-500 font-medium">미세 성취</span>
+                    </button>
+                    <button class="w-24 h-24 rounded-full bg-lavender flex flex-col items-center justify-center hover:scale-110 transition-transform shadow-inner group" onclick="respondSensing('anxious')">
+                        <span class="text-2xl mb-1 grayscale group-hover:grayscale-0 transition-all">💭</span>
+                        <span class="text-[10px] text-slate-700 font-medium">과부하 상태</span>
+                    </button>
+                </div>
+
+                <!-- 실시간 메타센싱 피드백 공간 -->
+                <div class="mt-8 p-6 bg-beige rounded-2xl text-center text-sm border border-slate-100 min-h-[50px] flex items-center justify-center text-slate-600 transition-all" id="sensing-feedback">
+                    버튼을 클릭해 현재의 감각 상태를 아카이빙해 보세요. 다정한 가이드가 나타납니다.
+                </div>
+
+                <div class="mt-12 pt-12 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="flex items-center space-x-4">
+                        <div class="flex -space-x-2">
+                            <div class="w-8 h-8 rounded-full border-2 border-white bg-sage-200"></div>
+                            <div class="w-8 h-8 rounded-full border-2 border-white bg-orange-200"></div>
+                            <div class="w-8 h-8 rounded-full border-2 border-white bg-slate-300"></div>
+                        </div>
+                        <p class="text-sm text-slate-400"><span class="text-slate-900 font-medium">1,420명</span>의 캠퍼스 메이트가 오늘 감각을 공유했습니다.</p>
+                    </div>
+                    <button class="px-6 py-3 text-sage-600 text-sm font-medium hover:underline underline-offset-4" onclick="alert('잠시 눈을 감고, 4초간 숨을 들이쉬고 4초간 내쉬어보세요.')">
+                        나를 위한 30초 메타센싱 호흡 가이드 따라하기 →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soft CTA Bridge Section -->
+    <section id="cta" class="py-32 px-6 bg-sage-700 relative overflow-hidden">
+        <!-- Abstract Shapes -->
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white"></path>
+            </svg>
+        </div>
+        
+        <div class="max-w-4xl mx-auto text-center relative z-10 reveal">
+            <h2 class="font-display text-3xl md:text-5xl font-light text-white mb-8 leading-tight">
+                나와 닮은 주파수를 가진<br/>
+                <span class="font-medium text-sage-100 italic">캠퍼스 메이트의 감정 로그</span>를 만나볼까요?
+            </h2>
+            <p class="text-sage-100/70 text-lg mb-12 max-w-xl mx-auto">
+                내 마음을 객관적으로 마주하는 것에서부터 위로가 스며듭니다. 누적된 기록을 토대로 나만을 위한 AI 개인 맞춤형 감정 리포트를 받아보세요.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="https://forms.gle/nUrbvb3QFLCpcEC97" target="_blank" class="w-full sm:w-auto">
+                    <button class="w-full px-10 py-5 bg-white text-sage-700 rounded-2xl font-semibold hover:shadow-2xl hover:shadow-sage-900/40 transition-all text-lg">
+                        감정 아카이빙 첫 페이지 열기
+                    </button>
+                </a>
+                <button class="w-full sm:w-auto px-10 py-5 bg-transparent border border-white/30 text-white rounded-2xl font-medium hover:bg-white/10 transition-all text-lg" onclick="alert('준비 중인 기능입니다. 정교한 익명 메시지 보관함을 구축하고 있어요.')">
+                    익명 로그 읽기
+                </button>
+            </div>
+            
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-white/50 text-sm font-light">
+                <div class="flex flex-col items-center">
+                    <span class="font-display text-2xl text-white block mb-1">100%</span>
+                    <span class="text-[10px] uppercase tracking-widest">안전한 익명성</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="font-display text-2xl text-white block mb-1">Sensing</span>
+                    <span class="text-[10px] uppercase tracking-widest">감정 객관화</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="font-display text-2xl text-white block mb-1">36.5°</span>
+                    <span class="text-[10px] uppercase tracking-widest">다정한 환대</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="font-display text-2xl text-white block mb-1">2026</span>
+                    <span class="text-[10px] uppercase tracking-widest">Seoul Campus Trend</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Reveal on scroll logic
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Question 1번용 메타센싱 상태값 변경 함수
+        function updateSensing(status) {
+            const statusEl = document.getElementById('sensing-status');
+            statusEl.innerText = status;
+            statusEl.classList.add('animate-pulse');
+            setTimeout(() => statusEl.classList.remove('animate-pulse'), 1000);
+        }
+
+        // 하단 원형 감정 버튼 상호작용 함수
+        function respondSensing(emotion) {
+            const feedbackText = document.getElementById('sensing-feedback');
+            if (emotion === 'calm') {
+                feedbackText.innerHTML = "✨ <strong>안정적인 주파수입니다.</strong> 이 고요함과 여유를 충분히 기억해 두세요. 내일의 나를 지탱하는 좋은 에너지가 됩니다.";
+            } else if (emotion === 'tired') {
+                feedbackText.innerHTML = "☕ <strong>정서적 결핍을 감지했습니다.</strong> 무기력은 잘못이 아닙니다. 지금 필요한 것은 과도한 노력이 아닌, 따뜻한 위로와 멈춤입니다.";
+            } else if (emotion === 'proud') {
+                feedbackText.innerHTML = "🌱 <strong>미세 성취를 성공적으로 인지했습니다!</strong> 남들과 비교하지 않고 내 안의 작은 성장을 짚어낸 나를 위해 격려를 건네주세요.";
+            } else if (emotion === 'anxious') {
+                feedbackText.innerHTML = "💭 <strong>과부하 상태가 감지되었습니다.</strong> 머릿속이 엉킬 때는 생각을 객관적으로 종이에 써 내려가며 하나씩 분리해 보는 것이 좋습니다.";
+            }
+        }
+
+        // 기존 단순 버튼 토글 스타일 로직 유지
+        document.querySelectorAll('#questions button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const parent = this.parentElement;
+                parent.querySelectorAll('button').forEach(b => {
+                    b.classList.remove('bg-sage-600', 'text-white', 'border-sage-600');
+                    b.classList.add('bg-slate-50', 'text-slate-500');
+                });
+                this.classList.remove('bg-slate-50', 'text-slate-500');
+                this.classList.add('bg-sage-600', 'text-white', 'border-sage-600');
+            });
+        });
+    </script>
+</body>
+</html>
